@@ -7,7 +7,7 @@ public class User {
     private String firstName = "FirstNameTest";
     private String lastName = "LastNameTest";
     private String email = index+"@email.pl";
-    private String password;
+    private String password = "SecretPassword1!";
 
     public String getFirstName() {
         return firstName;
