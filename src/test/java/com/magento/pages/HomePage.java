@@ -16,8 +16,16 @@ public class HomePage {
     @FindBy(xpath = "//a[text()='Create an Account']")
     private WebElement createAccLink;
 
+    @FindBy(xpath = "//a[contains(text(), 'Sign In')]")
+    private WebElement signInLink;
+
     public RegisterPage goToRegisterPage() {
         createAccLink.click();
         return new RegisterPage(driver);
+    }
+
+    public SignInPage goToSignInPage() {
+        signInLink.click();
+        return new SignInPage(driver);
     }
 }
