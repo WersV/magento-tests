@@ -19,6 +19,9 @@ public class HomePage {
     @FindBy(xpath = "//a[contains(text(), 'Sign In')]")
     private WebElement signInLink;
 
+    @FindBy(xpath = "//li[@class='greet welcome']//span")
+    private WebElement welcomeSpan;
+
     public RegisterPage goToRegisterPage() {
         createAccLink.click();
         return new RegisterPage(driver);
@@ -27,5 +30,9 @@ public class HomePage {
     public SignInPage goToSignInPage() {
         signInLink.click();
         return new SignInPage(driver);
+    }
+
+    public WebElement getWelcomeEl() {
+        return welcomeSpan;
     }
 }

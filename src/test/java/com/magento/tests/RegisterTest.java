@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 public class RegisterTest extends BaseTest{
 
     @Test
-    public void test() {
+    public void registerUser() {
         driver.get("https://magento.softwaretestingboard.com");
 
         User user = new User();
