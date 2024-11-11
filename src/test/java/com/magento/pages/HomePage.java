@@ -22,6 +22,12 @@ public class HomePage {
     @FindBy(xpath = "//li[@class='greet welcome']//span")
     private WebElement welcomeSpan;
 
+    @FindBy(xpath = "//button[@class='action switch']")
+    private WebElement optionsBtn;
+
+    @FindBy(xpath = "//a[contains(text(), 'Sign Out')]")
+    private WebElement signOutLink;
+
     public RegisterPage goToRegisterPage() {
         createAccLink.click();
         return new RegisterPage(driver);
@@ -34,5 +40,15 @@ public class HomePage {
 
     public WebElement getWelcomeEl() {
         return welcomeSpan;
+    }
+
+    public WebElement getSignInEl() {
+        return signInLink;
+    }
+
+    public HomePage signOutUser() {
+        optionsBtn.click();
+        signOutLink.click();
+        return this;
     }
 }
